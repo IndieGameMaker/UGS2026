@@ -9,4 +9,3 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TMP_InputField scoreIf;
     [SerializeField] private Button saveScoreButton;
 }
-π
