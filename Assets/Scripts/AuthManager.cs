@@ -11,6 +11,7 @@ public class AuthManager : MonoBehaviour
     [SerializeField] private Button logoutButton;
     [SerializeField] private Button savePlayerNameButton;
     [SerializeField] private TMP_InputField playerNameIf;
+    [SerializeField] private Button deleteUserButton;
 
     // async / await / Task
     private async void Start()
@@ -38,6 +39,9 @@ public class AuthManager : MonoBehaviour
         
         // 6. 이름 변경
         savePlayerNameButton.onClick.AddListener( async () => SetPlayerName(playerNameIf.text));
+        
+        // 7. User 삭제
+        deleteUserButton.onClick.AddListener( async () => await AuthenticationService.Instance.DeleteAccountAsync());
     }
 
     // 50자 허용
