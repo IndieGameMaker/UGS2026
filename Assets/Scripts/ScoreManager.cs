@@ -7,5 +7,6 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     [SerializeField] private TMP_InputField scoreIf;
-    [SerializeField] private Bπutton saveScoreButton;
+    [SerializeField] private Button saveScoreButton;
 }
+π
