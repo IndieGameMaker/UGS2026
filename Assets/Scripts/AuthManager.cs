@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class AuthManager : MonoBehaviour
 {
     [SerializeField] private Button loginButton;
+    [SerializeField] private Button logoutButton;
 
     // async / await / Task
     private async void Start()
@@ -16,6 +17,10 @@ public class AuthManager : MonoBehaviour
         // UGS 초기화
         await UnityServices.InitializeAsync();
         
+        // 로그인 관련 콜백
+        AuthenticationService.Instance.SignedOut += () => Debug.Log("로그아웃 완료");
+        
+        // 로그인 요청
         loginButton.onClick.AddListener(async () =>
         {
             // 익명 로그인
@@ -23,5 +28,8 @@ public class AuthManager : MonoBehaviour
             var playerId = AuthenticationService.Instance.PlayerId;
             Debug.Log("익명로그인 완료 " + playerId);
         });
-    }π
+        
+        // 로그아웃 처리
+        logoutButton.onClick.AddListener(() => AuthenticationService.Instance.SignOut());
+    }
 }
