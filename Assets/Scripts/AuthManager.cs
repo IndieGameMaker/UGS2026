@@ -15,5 +15,12 @@ public class AuthManager : MonoBehaviour
         
         // UGS 초기화
         await UnityServices.InitializeAsync();
+        
+        loginButton.onClick.AddListener(async () =>
+        {
+            // 익명 로그인
+            await AuthenticationService.Instance.SignInAnonymouslyAsync();
+            Debug.Log("익명로그인 완료");
+        });
     }
 }
