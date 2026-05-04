@@ -20,7 +20,8 @@ public class AuthManager : MonoBehaviour
         {
             // 익명 로그인
             await AuthenticationService.Instance.SignInAnonymouslyAsync();
-            Debug.Log("익명로그인 완료");
+            var playerId = AuthenticationService.Instance.PlayerId;
+            Debug.Log("익명로그인 완료 " + playerId);
         });
-    }
+    }π
 }
