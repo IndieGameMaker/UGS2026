@@ -2535,6 +2535,7 @@ MonoBehaviour:
   logoutButton: {fileID: 234306907}
   savePlayerNameButton: {fileID: 23235637}
   playerNameIf: {fileID: 1241935544}
+  deleteUserButton: {fileID: 318899830}
 --- !u!4 &1432553685
 Transform:
   m_ObjectHideFlags: 0
